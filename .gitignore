@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+*.sqlite3
+*.sqlite3-*
+dist/
+build/
+.env
+.env.*
+!.env.example
+rejected-events.jsonl
