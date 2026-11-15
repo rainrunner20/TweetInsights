@@ -1,0 +1,37 @@
+name: TweetInsights Python checks
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "examples/**"
+      - ".github/workflows/python.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "examples/**"
+      - ".github/workflows/python.yml"
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q src
+      - name: Exercise CLI with synthetic posts
+        run: |
+          python -m tweetinsights ingest --input examples/synthetic-posts.jsonl --db /tmp/tweetinsights-demo.sqlite3
+          python -m tweetinsights summary --db /tmp/tweetinsights-demo.sqlite3
