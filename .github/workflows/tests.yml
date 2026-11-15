@@ -1,0 +1,31 @@
+name: Python tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Render deterministic demo report
+        run: >-
+          python -m tweetinsights
+          --input data/demo_posts.csv
+          --start 2026-11-01T00:00:00Z
+          --end 2026-11-08T00:00:00Z
+          --output reports/demo.json
+          --html reports/demo.html
+          --sample-data
