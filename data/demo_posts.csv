@@ -1,0 +1,14 @@
+tweet_id,created_at,text,likes,reposts
+p01,2026-10-26T09:00:00Z,"Morning bike ride #Cycling #NYC",14,2
+p02,2026-10-27T15:00:00Z,"Neighborhood planning updates #NYC #Streets",8,1
+p03,2026-10-28T19:00:00Z,"Saw progress on bike lanes #Cycling",11,3
+p04,2026-10-30T12:00:00Z,"Discussing the future of public transit #Transit",7,1
+p05,2026-10-31T20:00:00Z,"Community meeting about street safety #Streets",10,2
+c01,2026-11-01T09:00:00Z,"New bike infrastructure visualization #Cycling #DataViz",22,5
+c02,2026-11-02T12:30:00Z,"Data dashboards help planners #DataViz #SmartCities",35,7
+c03,2026-11-03T08:30:00Z,"Visualizing transit trends #Transit #DataViz",24,3
+c04,2026-11-04T14:00:00Z,"How are cities using digital twins? #SmartCities #DigitalTwin",45,9
+c05,2026-11-05T10:00:00Z,"Mapping bike lanes and safety issues #Cycling #DataViz",38,6
+c06,2026-11-05T18:00:00Z,"Modeling urban traffic #DigitalTwin #SmartCities",28,4
+c07,2026-11-06T09:30:00Z,"Communities want useful street data #DataViz #NYC",31,5
+c08,2026-11-07T17:00:00Z,"Urban simulation demonstrations #DigitalTwin #SmartCities",52,10
